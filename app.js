@@ -12,8 +12,8 @@ const postsRouter = require('./routes/posts');
 app.use('/api', usersRouter);
 app.use('/api', postsRouter);
 
-// 启动服务
-const PORT = 3000;
+// 启动服务（修改端口配置）
+const PORT = process.env.PORT || 3000; // 优先使用Vercel分配的端口，本地默认3000
 app.listen(PORT, () => {
   console.log(`✅ 服务已启动：http://localhost:${PORT}`);
 });
